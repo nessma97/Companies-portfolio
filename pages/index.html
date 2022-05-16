@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="practicing fetch API and other cool stuff, check out my 3rd awesome project at creativa innovation hub!">
+    <meta name="keywords" content="Fetch Api in js, search functionality in javaScript, using async await with Fetch Api js">
+    <meta name="author" content="Nesma Hamdy">
+    <title>Fetch API task</title>
+    <link rel="stylesheet" href="../assets/styles/main.css">
+</head>
+<body>
+    <div class="loader hidden">
+        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" width="50" height="50">
+            <path fill="##ffd2d2e7"
+                d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50"
+                    to="360 50 50" repeatCount="indefinite" />
+            </path>
+        </svg>
+    </div>
+    <header class="container">
+        <nav class="nav__bar">
+            <ul class="main__nav">
+                <li>
+                    <a href="#compaines__link">Companies</a>
+                </li>
+                <li>
+                    <a href="#persons__link">persons</a>
+                </li>
+                <li>
+                    <a href="#books__link">books</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class='intro__wrapper'>
+            <div class="intro__content">
+                <h1>Using APIs to fetch Data</h1>
+                <h3>API is a damn good <span>javaScript</span> constructs mode that makes working with js a lot of fun!</h3>
+                <p>lets get started with a user search!</p>
+                <form class="search__persons" action="index.html" onsubmit="preventSubmit(event)">
+                    <input id='search__persons--input' type="text" placeholder="Search Persons..." onkeyup="searchpersons()">
+                </form>
+                <h2 class="persons__title"> -- Random Users API --</h2>
+            </div>
+            <article class="persons__wrapper"> 
+                <section class="persons persons--person" id="persons__link">
+
+                </section>
+            </article>
+        </section>
+        <section class="companies__wrapper" id="compaines__link">
+            <h2 class="companies__title">-- Random Compaines profiles --</h2>
+            <article class="companies">
+            
+            </article>
+        </section>
+        <section class="books__wrapper" id="books__link">
+            <h2 class="books__title">-- Random Books generator --</h2>
+            <article class="books">
+                
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>CopyRights Reserved <span><a href="https://www.linkedin.com/in/nesma-hamdy/" target="_blank">&#169 Nesma Hamdy</a></span></p></p>
+    </footer>
+    <script src="/assets/scripts/main.js"></script>
+</body>
+</html>

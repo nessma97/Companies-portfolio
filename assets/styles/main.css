@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Lobster&family=Montserrat+Alternates:ital@1&family=Oswald:wght@300&display=swap');
+:root {
+    --blue-tone: #16171e;
+    --dark-blue: #181b24;
+    --darker-blue: #0c0d14;
+    --light-blue: #10111c;
+    --lighter-blue: #22222d;
+    --dark-gray: #333333;
+    --dark-late-gray: #474747;
+    --dark-red: #ba182e;
+    --light-red: #ffd2d2e7;
+}
+
+/* start general styles */
+* {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+font-family: 'Oswald', sans-serif;
+font-weight: 300;
+background-color: var(--blue-tone);
+color: var(--dark-red)
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+    text-align: center;
+}
+
+/* End general styles */
+
+/* start nav styles */
+
+.main__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 5px;
+    margin-bottom: 35px;
+    width: 100%;
+    /* background-color: #7ddee7; */
+}
+
+.main__nav li a {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 30px 20px;
+    gap: 30px;
+    display: inline-block;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.main__nav a:hover {
+    color: var(--light-red);
+}
+
+/* start nav styles */
+
+/* start intro styles */
+
+.intro__content {
+    text-align: center;
+    height: 75vh;
+    margin-top: 35px;
+}
+
+.intro__content h1 {
+    font-weight: 400;
+    font-size: 5.5vw;
+    margin-block: 35px;
+}
+.intro__content h3 {
+    margin-block: 35px;
+    color: var(--light-red);
+    letter-spacing: 0.03rem;
+}
+.intro__content h2 {
+    font-size: 1.4rem;
+    padding-block: 7px;
+}
+
+.intro__content span {
+    color: var(--dark-red);
+}
+
+/* end intro styles */
+
+/* stary persons styles */
+
+.search__persons {
+    padding-block: 10px;
+    padding-bottom: 20px;
+    border-radius: 4px;
+    margin-block: 25px;
+}
+
+#search__persons--input {
+    outline: none;
+    transition: border .3s ease-in-out;
+    border: 1.2px solid transparent;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+    width: 40%;
+    color: var(--blue-tone);
+}
+
+@media (max-width: 1020px) {
+    #search__persons--input {
+    width: 50%; 
+    }
+}
+@media (max-width: 720px) {
+    #search__persons--input {
+        width: 50%;
+    }
+}
+#search__persons--input:hover {
+    border-color: var(--dark-red);
+}
+
+.persons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+
+.persons__data, .books__data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: calc(90% /4 - 40px);
+    height: 55vh;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 12px 13px rgb(4, 4, 23);
+    margin: 20px;
+    padding: 1.2rem;
+}
+
+@media (max-width: 1020px) {
+    .persons__data {
+        width: 25%;
+        padding: 2.2rem;
+    }
+}
+
+@media (max-width: 778px) {
+    .persons__data {
+        width: 33.3333%;
+    }
+}
+
+@media (max-width: 562px) {
+    .persons__data {
+        width: 50%;
+        padding: 2.3rem;
+    }
+}
+.persons__images {
+    border-radius: 10%;
+    width: 100%;
+    margin-block: 5px;
+}
+
+.perons__images--img {
+    border-radius: 10%;
+    max-width: 100%;
+    width: 90%;
+}
+
+.persons__info h2 {
+    font-size: 0.8rem;
+    font-weight: 100;
+    display: inline;
+}
+
+.persons__birthday {
+    font-size: 0.65rem;
+}
+.persons__country {
+    color: var(--light-red);
+    font-size: 0.75rem;
+    margin-bottom: 3px;
+}
+.persons__info button, 
+.companies__site,
+.companies__email,
+.companies__number {
+    background-color: var(--light-blue);
+    padding: 3px;
+    margin: 5px 5px 5px 0;
+    border-radius: 3px;
+    width: 80%;
+    font-size: 0.85rem;
+    border: none;
+    transition: border .3s ease-in-out;
+    cursor: pointer;
+}
+
+.company__buttons {
+    margin-top: 1.3rem;
+}
+
+@media (max-width: 415px){
+    .persons__info button {
+    width: 100%;
+    padding: 4px;
+    }
+}
+
+.persons__info button:hover,
+.companies__site:hover,
+.companies__email:hover,
+.companies__number:hover {
+    background-color: var(--lighter-blue);
+}
+
+/*End persons styles */
+
+/*Start companies styles */
+.companies__wrapper {
+    background-color: var(--dark-blue);
+    margin-block: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 3rem;
+}
+
+.companies {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+@media (max-width: 870px) {
+    .companies {
+        flex-direction: column-reverse;
+    }
+}
+
+.companies__site,
+.companies__email,
+.companies__number {
+    padding: 5px;
+
+}
+
+.companies__data {
+    /* margin-right: 1.2vw; */
+    width: 45%;
+    /* top: 0; */
+}
+
+@media (max-width: 870px) {
+    .companies__data {
+        text-align: center;
+    }
+}
+
+.companies__data h3 {
+    font-size: 1.85rem;
+    padding-block: 0.2rem;
+}
+
+@media (max-width: 787px){
+    .companies__data h3{
+        font-size: 3.9vw;
+        letter-spacing: 0.1vw;
+    }
+}
+
+@media (max-width: 487px) {
+    .companies__data h4 {
+        font-size: 3.2vw;
+        letter-spacing: 0.1vw;
+    }
+}
+.companies__data h4 {
+    color: var(--light-red);
+    font-size: 0.85rem;
+}
+.book__description {
+    white-space: pre-line;
+    padding-block: 18px 10px;
+    color: var(--light-red);
+}
+
+.companies__title, .books__title, .persons__title {
+    text-align: center;
+    font-size: 2rem;
+    padding: 25px;
+    /* margin-top: 20px; */
+}
+
+@media (max-width: 887px){
+.companies__title,
+    .books__title,
+    .persons__title {
+    font-size: 5.2vw;
+    }
+}
+.image__box {    
+    width: calc(45% - 6em);
+    border-radius: 10% 0 10% 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: 0 12px 13px rgb(4, 4, 23);
+    margin-block: 3em;
+    /* margin-left: 1.5em; */
+}
+
+@media (max-width: 870px) {
+    .image__box {
+        width: 50%;
+    }
+}
+.image__box img {
+    border-radius: 10% 0 10% 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+.companies__site,
+.companies__email,
+.companies__number {
+        width: 25%;
+        background-color: var(--light-blue);
+        box-shadow: 0 8px 10px rgb(4, 4, 23);
+}
+
+@media (max-width: 867px) {
+    .companies__site,
+    .companies__email,
+    .companies__number {
+        width: 33.33%;
+        margin-bottom: 2rem;
+        padding: 5px;
+
+    }
+}
+@media (max-width: 572px) {
+    .companies__site, 
+    .companies__email,
+    .companies__number {
+        width: 50%;
+        margin-bottom: 2rem;
+        padding: 3px;
+
+    }
+}
+
+@media (max-width: 378px) {
+    .companies__site,
+    .companies__email,
+    .companies__number {
+        width: 75%;
+        margin-bottom: 2rem;
+        padding: 2px;
+
+    }
+}
+
+/*End companies styles */
+
+/*Start books styles */
+
+.books {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.books__data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 65vh;
+    text-align: center;
+    box-shadow: 0 12px 13px rgb(4, 4, 23);
+    /* padding: 0.85rem; */
+    width: calc(100% /4 - 60px);
+    /* max-width: 100%; */
+}
+
+@media (max-width: 1020px) {
+    .books__data {
+        width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .books__data {
+        width: 33.3333%;
+    }
+}
+
+@media (max-width: 582px) {
+    .books__data {
+        width: 50%;
+    }
+}
+
+.books__info {
+    width: 80%;
+}
+
+.book__title {
+    font-size: 1rem;
+    letter-spacing: 0.1rem ;
+}
+
+.book__author {
+    font-size: 0.65rem;
+    color: var(--light-red);
+    letter-spacing: 0.09rem;
+}
+.book__description {
+    white-space: pre-line;
+    padding-block: 7px;
+    color: var(--dark-red);
+    font-size: 0.65rem;
+    padding-bottom: 8px;
+}
+
+.books__images, .books__images--img {
+    border-radius: 5%;
+    width: 80%;
+    max-width: 100%;
+}
+
+.books__images--img {
+    max-width: 100%;
+    /* margin-block: 5px; */
+}
+
+/*End books styles */
+
+/*start footer styles */
+
+.footer {
+    padding-block: 0.98em;
+    text-align: center;
+    background-color: var(--dark-blue);
+    width: 100%;
+}
+
+.footer p {
+    font-size: 0.85vw;
+    letter-spacing: 0.03rem;
+}
+
+.footer span a {
+    transition: all 0.3s ease;
+    color: var(--dark-red);
+}
+
+.footer a:hover {
+    color: var(--light-red);
+}
+
+/*End footer styles */
