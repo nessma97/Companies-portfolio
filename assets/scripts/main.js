@@ -1,4 +1,4 @@
-let personsContainer = document.querySelector(".persons"); 
+let personsContainer = document.querySelector(".persons");
 var searchPersonsInput = document.querySelector("#search__persons--input");
 let companiesContainer = document.querySelector(".companies");
 let booksContainer = document.querySelector(".books");
@@ -10,23 +10,23 @@ function displayPersonsData(persons) {
   personsContainer.innerHTML = "";
   persons.forEach((person) => {
     personsContainer.innerHTML += `
-                <div class="persons__data">
-                    <div class="persons__images">
-                        <img class='perons__images--img' src="${person.image}" alt="A person">
-                    </div>
-                    <div class="persons__info">
-                        <h2><span id='#persons__firstname'>${person.firstname}</span><span>${person.lastname}</span></h2>
-                        <p class="persons__birthday"> ${person.birthday}</p>
-                        <div class="contact__info">
-                            <button class='contact__info--email'>
-                                <a href="mailto: ${person.email}">My Email</a>
-                            </button>
-                            <button class="contact__info--website">
-                                <a href="${person.website}" >Visit my site</a>
-                            </button>
-                        </div>
-                    </div>
-                </div`;
+          <div class="persons__data">
+              <div class="persons__images">
+                  <img class='perons__images--img' src="${person.image}" alt="A person">
+              </div>
+              <div class="persons__info">
+                  <h2><span id='#persons__firstname'>${person.firstname}</span><span>${person.lastname}</span></h2>
+                  <p class="persons__birthday"> ${person.birthday}</p>
+                  <div class="contact__info">
+                      <button class='contact__info--email'>
+                          <a href="mailto: ${person.email}">My Email</a>
+                      </button>
+                      <button class="contact__info--website">
+                          <a href="${person.website}" >Visit my site</a>
+                      </button>
+                </div>
+              </div>
+          </div`;
   });
 }
 
