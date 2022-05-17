@@ -1,10 +1,11 @@
-let personsContainer = document.querySelector(".persons"); //grid
+let personsContainer = document.querySelector(".persons"); 
 var searchPersonsInput = document.querySelector("#search__persons--input");
 let companiesContainer = document.querySelector(".companies");
 let booksContainer = document.querySelector(".books");
 let loader = document.querySelector(".loader");
 let SearchPersonsData = [];
 
+// -------- start persons --------
 function displayPersonsData(persons) {
   personsContainer.innerHTML = "";
   persons.forEach((person) => {
@@ -29,9 +30,9 @@ function displayPersonsData(persons) {
   });
 }
 
-function getRandomPerson() {
+async function getRandomPerson() {
   loader.classList.remove("hidden");
-  fetch("https://fakerapi.it/api/v1/persons?_quantity=20")
+  await fetch("https://fakerapi.it/api/v1/persons?_quantity=20")
     .then((response) => response.json())
     .then(({ data }) => {
       displayPersonsData(data);
@@ -44,7 +45,7 @@ function getRandomPerson() {
       loader.classList.add("hidden");
     });
 }
-// Search Person Data
+// Search Persons functionality
 searchPersonsInput.addEventListener("input", searchPersons);
 function searchPersons() {
   let searchPersonsResult = searchPersonsInput.value.toLowerCase();
@@ -58,6 +59,10 @@ function searchPersons() {
   displayPersonsData(personDataFiltered);
 }
 getRandomPerson();
+
+// -------- End persons --------
+
+// -------- start Companies --------
 
 function displayCompaniesData(companies) {
   companies.forEach((company) => {
@@ -84,44 +89,51 @@ function displayCompaniesData(companies) {
 }
 
 async function getRandomCompanies() {
+  loader.classList.remove("hidden");
   await fetch("https://fakerapi.it/api/v1/companies?_quantity=15")
     .then((response) => response.json())
     .then((data) => displayCompaniesData(data.data))
     .catch((error) => {
       console.log("Resquest Failed", error);
+    })
+    .finally(() => {
+      loader.classList.add("hidden");
     });
 }
 getRandomCompanies();
 
+// -------- start Companies --------
+
+// -------- start Books --------
+
 function displayBooksData(books) {
   books.forEach((book) => {
     booksContainer.innerHTML += `
-                <div class="books__data">
-                    <div class="books__images">
-                        <img src="${book.image}" class="books__images--img" alt="books cover">
-                    </div>
-                    <div class="books__info">
-                        <h2 class="book__title">${book.title}</h2>
-                        <h3 class="book__author">${book.author}</h3>
-                        <p class="book__description"> ${book.description} </p>
-                    </div>
-                </div>`;
+        <div class="books__data">
+          <div class="books__images">
+            <img src="${book.image}" class="books__images--img" alt="books cover">
+          </div>
+          <div class="books__info">
+            <h2 class="book__title">${book.title}</h2>
+              <h3 class="book__author">${book.author}</h3>
+              <p class="book__description"> ${book.description} </p>
+            </div>
+        </div>`;
   });
 }
 
 async function getRandomBooks() {
+  loader.classList.remove("hidden");
   await fetch("https://fakerapi.it/api/v1/books?_quantity=12")
     .then((response) => response.json())
     .then((data) => displayBooksData(data.data))
     .catch((error) => {
       console.log("Resquest Failed", error);
+    })
+    .finally(() => {
+      loader.classList.add("hidden");
     });
 }
 getRandomBooks();
 
-// async function getRandomData() {
-//   await getRandomPerson();
-//   await getRandomCompanies();
-//   await getRandomBooks();
-// }
-// getRandomData();
+// -------- start Books --------
